@@ -19,7 +19,7 @@ size_t traverse_tree(const binary_tree_t *tree, size_t leaves)
 	leaves += flag;
 	flag = traverse_tree(tree->right, leaves);
 	leaves += flag;
-	if (binary_tree_is_leaf(tree))
+	if (!tree->left && !tree->right)
 		return (1);
 	return (leaves);
 }
